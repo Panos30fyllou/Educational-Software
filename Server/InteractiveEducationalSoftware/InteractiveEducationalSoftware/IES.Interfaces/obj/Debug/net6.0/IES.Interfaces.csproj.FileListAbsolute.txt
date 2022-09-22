@@ -1,0 +1,15 @@
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\bin\Debug\net6.0\IES.Interfaces.deps.json
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\bin\Debug\net6.0\IES.Interfaces.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\bin\Debug\net6.0\IES.Interfaces.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\bin\Debug\net6.0\IES.Models.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\bin\Debug\net6.0\IES.Models.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.AssemblyInfo.cs
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.csproj.CopyComplete
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\refint\IES.Interfaces.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\IES.Interfaces.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Interfaces\obj\Debug\net6.0\ref\IES.Interfaces.dll

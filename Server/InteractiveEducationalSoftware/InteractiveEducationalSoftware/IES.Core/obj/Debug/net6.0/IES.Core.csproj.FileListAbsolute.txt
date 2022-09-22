@@ -1,0 +1,12 @@
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\bin\Debug\net6.0\IES.Core.deps.json
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\bin\Debug\net6.0\IES.Core.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\bin\Debug\net6.0\IES.Core.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.csproj.AssemblyReference.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.AssemblyInfoInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.AssemblyInfo.cs
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.csproj.CoreCompileInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\refint\IES.Core.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\IES.Core.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Core\obj\Debug\net6.0\ref\IES.Core.dll

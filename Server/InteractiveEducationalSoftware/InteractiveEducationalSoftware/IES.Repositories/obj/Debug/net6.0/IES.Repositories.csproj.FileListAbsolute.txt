@@ -1,0 +1,12 @@
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Repositories.deps.json
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Repositories.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Repositories.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.csproj.AssemblyReference.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.AssemblyInfoInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.AssemblyInfo.cs
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.csproj.CoreCompileInputs.cache
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\refint\IES.Repositories.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\ref\IES.Repositories.dll
