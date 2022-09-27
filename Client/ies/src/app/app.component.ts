@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidenavService } from './services/sidenav.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ies';
   opened = true;
+
+  isLoggedIn: boolean = false;
+
+  constructor(private sideNavSrv: SidenavService) { }
+
+  ngOnInit(): void {
+    this.sideNavSrv.open()
+  }
 }

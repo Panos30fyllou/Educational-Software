@@ -2,3 +2,101 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.centerHeader {
+  text-align: center !important;
+  font-size: medium;
+}
+
+.centerCell {
+  text-align: center !important;
+}
+
+.leftHeader {
+  text-align: left !important;
+  font-size: medium;
+}
+
+.leftCell {
+  text-align: left !important;
+}
+
+.rightHeader {
+  text-align: right !important;
+  font-size: medium;
+}
+
+.rightCell {
+  text-align: right !important;
+}
+
+td {
+  border: 1px rgb(228, 221, 221);
+}
+
+tr, th {
+  border: 1px rgb(158, 154, 154);
+  font-size: large;
+}
+
+thead {
+  border: 1px;
+}
+
+mat-card {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 20px !important;
+}
+
+.card_title {
+  text-align: center;
+  color: #673ab7;
+  padding-bottom: 10px;
+}
+
+.mat-select-arrow-wrapper {
+  display: block !important;
+}
+
+.cell_wrap {
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+.updateIcon {
+  margin-right: 15px;
+}
+
+.deleteIcon {
+  margin-left: 15px;
+}
+
+.mat-column-id {
+  width: 8%;
+  font-weight: bold;
+  padding-right: 24px;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 50px;
+}

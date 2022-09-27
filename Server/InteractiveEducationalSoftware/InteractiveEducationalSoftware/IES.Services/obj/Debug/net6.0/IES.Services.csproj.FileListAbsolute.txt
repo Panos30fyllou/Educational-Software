@@ -10,3 +10,8 @@ C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\obj\Debug\net6.0\refint\IES.Services.dll
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\obj\Debug\net6.0\IES.Services.pdb
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\obj\Debug\net6.0\ref\IES.Services.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\bin\Debug\net6.0\IES.Interfaces.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\bin\Debug\net6.0\IES.Models.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\bin\Debug\net6.0\IES.Interfaces.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\bin\Debug\net6.0\IES.Models.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Services\obj\Debug\net6.0\IES.Services.csproj.CopyComplete

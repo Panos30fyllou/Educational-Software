@@ -1,0 +1,53 @@
+<section class="headSection">
+    <div class="headText">
+        Reservations App Training
+    </div>
+</section>
+<br><br>
+
+<mat-card>
+    <mat-card-title class="card_title">Register</mat-card-title>
+    <form #userData="ngForm" (ngSubmit)="onSubmit()" class="registerForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="text" name="username" [(ngModel)]="data.username" matInput required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" name="password" [(ngModel)]="data.password" matInput required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" name="passwordConfirm" matInput required [(ngModel)]="passwordConfirm">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline">
+            <mat-label>First name</mat-label>
+            <input type="text" name="firstName" [(ngModel)]="data.firstName" matInput required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input type="text" name="lastName" [(ngModel)]="data.lastName" matInput required>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" name="email" ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                [(ngModel)]="data.email" matInput required>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary">Register</button>
+        <br><br>
+        <div>Already have an account?</div>
+        <a [routerLink]="['/login']">Login</a>
+        <br><br>
+    </form>
+</mat-card>

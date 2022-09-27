@@ -10,3 +10,8 @@ C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\refint\IES.Repositories.dll
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.pdb
 C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\ref\IES.Repositories.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Interfaces.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Models.dll
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Interfaces.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\bin\Debug\net6.0\IES.Models.pdb
+C:\Users\Kingpin\Uni\Educational Software\Server\InteractiveEducationalSoftware\InteractiveEducationalSoftware\IES.Repositories\obj\Debug\net6.0\IES.Repositories.csproj.CopyComplete

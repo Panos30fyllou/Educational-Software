@@ -1,11 +1,11 @@
-﻿namespace IES.Interfaces
+﻿namespace IES.Interfaces.Services
 {
-    public interface IRepository<T, TKey>
+    public interface IService<T, TKey>
     {
         List<T> SelectAll();
         T SelectById(TKey id);
         void Insert(T entity);
         void Update(T entity);
-        void Delete(T entity);
+        void Delete(TKey id);
     }
 }
