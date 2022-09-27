@@ -1,29 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedIn: boolean;
-  
+  private isLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isLoggedIn$?: Observable<string>;
+
   constructor(private router: Router) {
-    this.isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    this.isLoggedIn.next(localStorage.getItem("isLoggedIn") == "true");
   }
 
   logOut(): void {
-    this.isLoggedIn = false;
+    this.isLoggedIn.next(false);
     localStorage.removeItem("isLoggedIn");
   }
 
   changeLoginStatusTrue(): void {
-    this.isLoggedIn = true;
+    this.isLoggedIn.next(true);
     localStorage.setItem("isLoggedIn", "true");
   }
 
-  get checkLoginStatus(): boolean {
-    return this.isLoggedIn;
+  get IsLoggedIn$(): Observable<boolean> {
+    return this.isLoggedIn.asObservable();
+  }
+
+  get checkLoginStatus(): Observable<boolean> {
+    return this.isLoggedIn.asObservable();
   }
 
   setUsername(username: string) {

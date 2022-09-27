@@ -31,7 +31,8 @@ import { LessonComponent } from './lessons/lesson-detailed/lesson.component';
 import { TestsComponent } from './tests/tests-list/tests.component';
 import { SidenavService } from './services/sidenav.service';
 import { LandingComponent } from './landing/landing.component';
-
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { LandingComponent } from './landing/landing.component';
     LessonComponent,
     TestsComponent,
     LandingComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [HttpClientModule,
     BrowserModule,
