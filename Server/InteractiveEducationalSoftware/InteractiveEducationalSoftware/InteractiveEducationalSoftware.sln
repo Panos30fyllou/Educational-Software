@@ -13,11 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Interfaces", "IES.Inter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Models", "IES.Models\IES.Models.csproj", "{01C9794C-4197-42B1-9052-E1CAA38F0B2E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{19635B13-6B00-466C-8C6C-3F032E9F1F24}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\..\Desktop\IES.sql = ..\..\..\..\..\Desktop\IES.sql
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Core", "IES.Core\IES.Core.csproj", "{39FDEB3F-1C73-4102-BD30-ACD8F0673DA0}"
 EndProject
 Global

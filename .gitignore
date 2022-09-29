@@ -1,2 +1,7 @@
 ﻿Client/node_modules
 Server/InteractiveEducationalSoftware/InteractiveEducationalSoftware/.vs
+*.suo
+Server/InteractiveEducationalSoftware/InteractiveEducationalSoftware/IES.Interfaces/obj
+Server/InteractiveEducationalSoftware/InteractiveEducationalSoftware/IES.Repositories/obj
+Server/InteractiveEducationalSoftware/InteractiveEducationalSoftware/IES.Services/obj
+Server/InteractiveEducationalSoftware/InteractiveEducationalSoftware/InteractiveEducationalSoftware/obj
