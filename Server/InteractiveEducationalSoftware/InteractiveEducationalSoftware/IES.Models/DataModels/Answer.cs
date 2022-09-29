@@ -1,4 +1,4 @@
-﻿namespace IES.Models
+﻿namespace IES.Models.DataModels
 {
     public class Answer
     {

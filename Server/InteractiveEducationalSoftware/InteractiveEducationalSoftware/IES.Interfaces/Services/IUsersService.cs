@@ -1,4 +1,4 @@
-﻿using IES.Models;
+﻿using IES.Models.DataModels;
 
 namespace IES.Interfaces.Services
 {

@@ -15,8 +15,7 @@ export class AuthService {
 
   logOut(): void {
     this.isLoggedIn.next(false);
-    localStorage.removeItem("isLoggedIn");
-  }
+    localStorage.setItem("isLoggedIn", "false");  }
 
   changeLoginStatusTrue(): void {
     this.isLoggedIn.next(true);

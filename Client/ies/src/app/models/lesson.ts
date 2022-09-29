@@ -1,12 +1,10 @@
-export class Lesson {
-    chapter: string;
-    description: string;
-    content: string;
+import { LessonListItem } from "./lesson-list-item";
 
-    constructor(){
-        this.chapter="Chapter 1"
-        this.description="description"
-        this.content="content"
+export class Lesson extends LessonListItem {
+    material: string;
 
+    constructor() {
+        super();
+        this.material = "material";
     }
 }

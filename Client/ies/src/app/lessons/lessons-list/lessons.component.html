@@ -1,5 +1,7 @@
-<div>
-    <mat-card *ngFor="let lesson of lessons" style="margin-bottom: 2vh;">
+<div style="display: inline-flex;
+width: -webkit-fill-available;
+padding: 5vh;">
+    <mat-card *ngFor=" let lesson of lessons" style="margin: 2vh;" (click)="openLesson(lesson.lessonId)">
 
         <mat-card-title>
             {{lesson.chapter}}

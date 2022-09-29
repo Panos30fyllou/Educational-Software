@@ -2,11 +2,11 @@
 using DapperExtensions;
 using IES.Interfaces;
 using IES.Interfaces.Repositories;
-using IES.Models;
+using IES.Models.DataModels;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace PhoneCatalog.Repositories
+namespace IES.Repositories
 {
     public class QuestionsRepository : IQuestionsRepository
     {

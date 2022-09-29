@@ -1,4 +1,4 @@
-﻿namespace IES.Models
+﻿namespace IES.Models.BusinessModels
 {
     public class LoginRequest
     {

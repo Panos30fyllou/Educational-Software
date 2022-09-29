@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'test', component: TestComponent, canActivate: [LoginGuard]},
-  { path: 'tests', component: TestsComponent, canActivate: [LoginGuard]},
-  { path: 'lesson', component: LessonComponent, canActivate: [LoginGuard]},
-  { path: 'lessons', component: LessonsComponent, canActivate: [LoginGuard]},
-  { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard]},
-  { path: 'home', redirectTo: 'lessons' }
+  { path: 'test', component: TestComponent, canActivate: [LoginGuard] },
+  { path: 'tests', component: TestsComponent, canActivate: [LoginGuard] },
+  { path: 'lesson/:id', component: LessonComponent, canActivate: [LoginGuard] },
+  { path: 'lessons', component: LessonsComponent, canActivate: [LoginGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [LoginGuard] },
+  { path: 'home', redirectTo: '/lessons', pathMatch: 'full' }
 ];
 
 @NgModule({

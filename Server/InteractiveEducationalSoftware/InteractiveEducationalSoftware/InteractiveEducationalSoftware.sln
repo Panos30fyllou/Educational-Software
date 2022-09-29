@@ -3,19 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteractiveEducationalSoftware.WebHost", "InteractiveEducationalSoftware\InteractiveEducationalSoftware.WebHost.csproj", "{B92FC4B7-4826-429A-B3E5-3AE70A353D56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InteractiveEducationalSoftware.WebHost", "InteractiveEducationalSoftware\InteractiveEducationalSoftware.WebHost.csproj", "{B92FC4B7-4826-429A-B3E5-3AE70A353D56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IES.Repositories", "IES.Repositories\IES.Repositories.csproj", "{73F59F9D-BE44-425E-922D-F9010BC6ED69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Repositories", "IES.Repositories\IES.Repositories.csproj", "{73F59F9D-BE44-425E-922D-F9010BC6ED69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IES.Services", "IES.Services\IES.Services.csproj", "{65F0CC7F-4FB3-4F12-85E0-5E31ECCF8C95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Services", "IES.Services\IES.Services.csproj", "{65F0CC7F-4FB3-4F12-85E0-5E31ECCF8C95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IES.Interfaces", "IES.Interfaces\IES.Interfaces.csproj", "{A0EF0F28-76C6-497B-9CAF-54EBE6A0630F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Interfaces", "IES.Interfaces\IES.Interfaces.csproj", "{A0EF0F28-76C6-497B-9CAF-54EBE6A0630F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IES.Models", "IES.Models\IES.Models.csproj", "{01C9794C-4197-42B1-9052-E1CAA38F0B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Models", "IES.Models\IES.Models.csproj", "{01C9794C-4197-42B1-9052-E1CAA38F0B2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{19635B13-6B00-466C-8C6C-3F032E9F1F24}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\IES.sql = ..\..\..\..\..\Desktop\IES.sql
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IES.Core", "IES.Core\IES.Core.csproj", "{39FDEB3F-1C73-4102-BD30-ACD8F0673DA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IES.Core", "IES.Core\IES.Core.csproj", "{39FDEB3F-1C73-4102-BD30-ACD8F0673DA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

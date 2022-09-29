@@ -1,9 +1,11 @@
 ﻿using IES.Interfaces.Services;
 using IES.Models;
+using IES.Models.BusinessModels;
+using IES.Models.DataModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 
-namespace PhoneCatalog.WebHost.Controllers
+namespace IES.WebHost.Controllers
 {
     [EnableCors("*", "*", "*")]
     [ApiController]
