@@ -18,8 +18,12 @@ export class LoginComponent implements OnInit, OnDestroy {
   loginResult?: string;
   message?: string;
   username: string = '';
-  
-  constructor(private loginService: LoginService, private router: Router, private auth: AuthService, private snackBar: MatSnackBar) { }
+
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private auth: AuthService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit(): void { }
 
@@ -28,10 +32,19 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(data: any): void {
-    console.log(this.loginService.login(data))
-    this.loginSubscription = this.loginService.login(data)
-      .subscribe((success) => (this.message = "Successfull login", this.auth.setUsername(this.username), console.log(this.username), this.auth.changeLoginStatusTrue(), this.router.navigate(["/home"])),
-        (error) => this.handleError(error));
+    this.loginService.login(data).subscribe({
+      next: () => {
+        this.message = "Successfull login";
+        this.auth.setUsername(this.username);
+        this.auth.changeLoginStatusTrue();
+        this.router.navigate(["/home"]);
+      },
+      error: (error) => {
+        this.handleError(error);
+      }
+    });
+
+
   }
 
   handleError(error: HttpErrorResponse) {

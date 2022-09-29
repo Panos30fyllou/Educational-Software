@@ -10,21 +10,13 @@ import { SidenavService } from '../services/sidenav.service';
 
 
 export class HeaderComponent implements OnInit {
-  
-@Input() sidenav: MatSidenav | undefined;
 
-  constructor(private sidenavService: SidenavService) { 
+  @Input() sidenav: MatSidenav | undefined;
+
+  constructor(private sidenavService: SidenavService) {
   }
 
   ngOnInit(): void {
 
-  }
-
-  toggle(){
-    this.sidenavService.toggle();
-  }
-
-  opened(){
-    this.sidenavService.opened();
   }
 }

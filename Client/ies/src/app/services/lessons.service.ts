@@ -16,14 +16,13 @@ export class LessonsService {
 
   constructor(private http: HttpClient) { }
 
-  getLessonListItems(): Observable<LessonListItem[]>{
+  getLessonListItems(): Observable<LessonListItem[]> {
     this.url = environment.serverUrl + "/Lessons/SelectListItems";
     return this.http.get<LessonListItem[]>(this.url);
   }
 
-  register(data: User) {
-    this.url = environment.serverUrl + "/Users/Register";
-
-    return this.http.post(this.url, data);
+  getLessonById(id: number) {
+    this.url = environment.serverUrl + `/Lessons/SelectById/${id}`;
+    return this.http.get(this.url);
   }
 }

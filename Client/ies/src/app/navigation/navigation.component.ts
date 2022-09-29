@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { AuthService } from '../auth.service';
 
@@ -14,10 +14,24 @@ export class NavigationComponent implements OnInit {
 
   isLoggedIn: boolean = false;
 
-  constructor(private authSrv: AuthService) { }
+  constructor(private authSrv: AuthService, private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.authSrv.IsLoggedIn$.subscribe({ next: (res) => this.isLoggedIn = res })
+    this.isLoggedIn = false
+    this.authSrv.IsLoggedIn$.subscribe({
+      next: (res) => {
+        this.isLoggedIn = res;
+      }
+    })
+  }
+
+  ngAfterViewChecked() {
+    this.authSrv.IsLoggedIn$.subscribe({
+      next: (res) => {
+        this.isLoggedIn = res;
+      }
+    })
+    this.cdRef.detectChanges();
   }
 
   logout() {
