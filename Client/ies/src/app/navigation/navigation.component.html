@@ -1,0 +1,20 @@
+<mat-sidenav-container style="width: 100%; height: 100%;">
+    <mat-sidenav #sidenav mode='side' style="width: min-content" *ngIf="isLoggedIn">
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/lessons']" class="link">
+                <mat-icon>books</mat-icon>&nbsp;Lessons
+            </a>
+            <a mat-list-item [routerLink]="['/tests']" class="link">
+                <mat-icon>edit</mat-icon>&nbsp;Tests
+            </a>
+            <a mat-list-item [routerLink]="['/login']" (click)="logout()" class="link">
+                <mat-icon>logout</mat-icon>&nbsp;Logout
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header *ngIf="isLoggedIn" [sidenav]="sidenav"></app-header>
+        <app-main style="height: 100%;"></app-main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

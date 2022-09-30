@@ -15,23 +15,43 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSortModule } from '@angular/material/sort';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { TestComponent } from './tests/test-detailed/test.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { MainComponent } from './main/main.component';
+import { HeaderComponent } from './header/header.component';
+import { LessonsComponent } from './lessons/lessons-list/lessons.component';
+import { LessonComponent } from './lessons/lesson-detailed/lesson.component';
+import { TestsComponent } from './tests/tests-list/tests.component';
+import { SidenavService } from './services/sidenav.service';
+import { LandingComponent } from './landing/landing.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
-    ProfileComponent
+    ProfileComponent,
+    TestComponent,
+    NavigationComponent,
+    MainComponent,
+    HeaderComponent,
+    LessonsComponent,
+    LessonComponent,
+    TestsComponent,
+    LandingComponent,
+    LoginComponent,
+    RegisterComponent
   ],
-  imports: [ HttpClientModule,
+  imports: [HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -52,9 +72,10 @@ import { ProfileComponent } from './profile/profile.component';
     MatCardModule,
     MatTooltipModule,
     MatDatepickerModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule
   ],
-  providers: [],
+  providers: [SidenavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

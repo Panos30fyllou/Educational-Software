@@ -1,0 +1,19 @@
+<mat-card style="margin: 2vh;">
+    <mat-card-title>
+        {{test.chapter}}
+    </mat-card-title>
+    <mat-card-content>
+        <div *ngFor="let question of test.questions">
+            <h1>
+                {{question.description}}
+            </h1>
+            <mat-radio-group>
+                <mat-radio-button *ngFor="let answer of question.possibleAnswers">
+                    {{answer.description}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </mat-card-content>
+    <button>Take Test</button>
+</mat-card>
