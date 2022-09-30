@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using Dapper.Contrib.Extensions;
+using DapperExtensions;
 using IES.Interfaces;
 using IES.Interfaces.Repositories;
 using IES.Models.DataModels;
@@ -8,78 +8,65 @@ using System.Data.SqlClient;
 
 namespace IES.Repositories
 {
-    public class UsersRepository : IUsersRepository
+    public class TestsRepository : ITestsRepository
     {
         public string ConnectionString { get; set; }
 
-        public UsersRepository(IDbConfig dbConfig)
+        public TestsRepository(IDbConfig dbConfig)
         {
             ConnectionString = dbConfig.ConnectionString;
         }
 
-        public List<User> SelectAll()
+        public List<Test> SelectAll()
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var subscribers = db.GetAll<User>().ToList();
+                var tests = db.GetList<Test>().ToList();
                 db.Close();
 
-                return subscribers;
+                return tests;
             }
         }
 
-        public User SelectById(int id)
+        public Test SelectById(int id)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var subscriber = db.Get<User>(id);
+                var test = db.Get<Test>(id);
                 db.Close();
 
-                return subscriber;
+                return test;
             }
         }
 
-        public User Login(string username, string password)
+        public void Insert(Test test)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var user = db.QueryFirstOrDefault<User>(@"SELECT * FROM Users WHERE [Username]=@username AND [Password]=@password", new { username, password });
-                db.Close();
-                return user;
-            }
-
-        }
-
-
-        public void Insert(User subscriber)
-        {
-            using (IDbConnection db = new SqlConnection(ConnectionString))
-            {
-                db.Open();
-                db.Insert(subscriber);
+                db.Insert(test);
                 db.Close();
             }
         }
 
-        public void Update(User subscriber)
+        public void Update(Test test)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                db.Update(subscriber);
+                db.Update(test);
                 db.Close();
             }
         }
 
-        public void Delete(User subscriber)
+        public void Delete(Test test)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                db.Delete(subscriber);
+                db.Delete(test);
                 db.Close();
             }
         }

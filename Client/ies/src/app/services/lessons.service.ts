@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { LessonListItem } from '../models/lesson-list-item';
+import { Lesson } from '../models/lesson';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,8 @@ export class LessonsService {
     return this.http.get<LessonListItem[]>(this.url);
   }
 
-  getLessonById(id: number) {
+  getLessonById(id: number): Observable<Lesson> {
     this.url = environment.serverUrl + `/Lessons/SelectById/${id}`;
-    return this.http.get(this.url);
+    return this.http.get<Lesson>(this.url);
   }
 }

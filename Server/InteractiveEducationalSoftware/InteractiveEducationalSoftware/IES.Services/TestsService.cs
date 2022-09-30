@@ -7,12 +7,12 @@ namespace IES.Services
 {
     public class TestsService : ITestsService
     {
-        private IRepository<Test, int> _testRepository;
+        private ITestsRepository _testRepository;
         private IQuestionsRepository _questionRepository;
 
         public string ConnectionString { get; set; }
 
-        public TestsService(IRepository<Test, int> testRepository, IQuestionsRepository questionRepository)
+        public TestsService(ITestsRepository testRepository, IQuestionsRepository questionRepository)
         {
             _testRepository = testRepository;
             _questionRepository = questionRepository;

@@ -36,9 +36,9 @@ namespace IES.Repositories
                 db.Open();
                 var questions = db.Query<Question>(
                     @"SELECT TOP 5 
-                        [AnswerId],
+                        [QuestionId],
                         [Description]
-	                FROM Answers 
+	                FROM Questions 
                     ORDER BY NEWID()").ToList();
                 db.Close();
 

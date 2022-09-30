@@ -1,7 +1,10 @@
-﻿namespace IES.Models.DataModels
+﻿using Dapper.Contrib.Extensions;
+
+namespace IES.Models.DataModels
 {
     public class User
     {
+        [Key]
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

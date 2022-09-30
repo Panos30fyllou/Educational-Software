@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using DapperExtensions;
+using Dapper.Contrib.Extensions;
 using IES.Interfaces;
 using IES.Interfaces.Repositories;
 using IES.Models.DataModels;
@@ -22,10 +22,10 @@ namespace IES.Repositories
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var lessons = db.GetList<Chapter>().ToList();
+                var chapters = db.GetAll<Chapter>().ToList();
                 db.Close();
 
-                return lessons;
+                return chapters;
             }
         }
 
@@ -34,7 +34,7 @@ namespace IES.Repositories
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var lessons = db.Query<Chapter>(
+                var chapters = db.Query<Chapter>(
                     @"SELECT TOP 5 
                         [AnswerId],
                         [Description]
@@ -42,7 +42,7 @@ namespace IES.Repositories
                     ORDER BY NEWID()").ToList();
                 db.Close();
 
-                return lessons;
+                return chapters;
             }
         }
 
@@ -51,39 +51,39 @@ namespace IES.Repositories
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var lesson = db.Get<Chapter>(id);
+                var chapter = db.Get<Chapter>(id);
                 db.Close();
 
-                return lesson;
+                return chapter;
             }
         }
 
-        public void Insert(Chapter lesson)
+        public void Insert(Chapter chapter)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                db.Insert(lesson);
+                db.Insert(chapter);
                 db.Close();
             }
         }
 
-        public void Update(Chapter lesson)
+        public void Update(Chapter chapter)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                db.Update(lesson);
+                db.Update(chapter);
                 db.Close();
             }
         }
 
-        public void Delete(Chapter lesson)
+        public void Delete(Chapter chapter)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                db.Delete(lesson);
+                db.Delete(chapter);
                 db.Close();
             }
         }

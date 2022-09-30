@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Test } from 'src/app/models/test';
+import { TestsService } from 'src/app/services/tests.service';
 
 @Component({
   selector: 'app-test',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public test: Test;
+  public routeSub?: Subscription;
+  constructor(private route: ActivatedRoute, private testsService: TestsService) {
+    this.test = new Test();
   }
 
+  ngOnInit() {
+    this.routeSub = this.route.params.subscribe(params => {
+      this.testsService.generateTest(params['chapterId']).subscribe({ next: (test) => this.test = test })
+    });
+  }
+
+  ngOnDestroy() {
+    this.routeSub?.unsubscribe();
+  }
 }

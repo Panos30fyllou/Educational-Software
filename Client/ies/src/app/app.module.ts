@@ -15,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
@@ -70,7 +72,8 @@ import { RegisterComponent } from './register/register.component';
     MatCardModule,
     MatTooltipModule,
     MatDatepickerModule,
-    MatSortModule
+    MatSortModule,
+    MatRadioModule
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent]

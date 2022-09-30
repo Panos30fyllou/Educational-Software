@@ -19,6 +19,23 @@ namespace IES.WebHost.Controllers
         }
 
         [HttpGet]
+        [Route("[action]")]
+        public ActionResult Generate()
+        {
+            Test test;
+            try
+            {
+                test = _testService.GenerateTest();
+            }
+            catch (BusinessException e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(test);
+        }
+
+        [HttpGet]
         public ActionResult Get()
         {
             Test test;

@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using DapperExtensions;
+using Dapper.Contrib.Extensions;
 using IES.Interfaces;
 using IES.Interfaces.Repositories;
 using IES.Models.BusinessModels;
@@ -23,7 +23,7 @@ namespace IES.Repositories
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var lessons = db.GetList<LessonEntity>().ToList();
+                var lessons = db.GetAll<LessonEntity>().ToList();
                 db.Close();
 
                 return lessons;
