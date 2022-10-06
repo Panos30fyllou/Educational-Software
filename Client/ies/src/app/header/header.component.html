@@ -1,5 +1,5 @@
 <div style="width: 100%; display: inline-flex; justify-content: space-between; padding-top: 2vh;">
-    <a mat-list-item (click)="sidenav?.toggle()" [routerLink]="['/home']" class="link">
+    <a mat-list-item (click)="sidenav?.toggle()" class="link">
         <mat-icon *ngIf="sidenav?.opened">chevron_left</mat-icon>
         <mat-icon style="padding-left: 1vw;" *ngIf="!sidenav?.opened">menu</mat-icon>
     </a>

@@ -3,9 +3,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from '../services/login.service';
+import { AuthService } from '../services/auth.service';
+import { Student, User } from '../models/user';
 
 @Component({
   selector: 'app-login',
@@ -33,9 +35,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit(data: any): void {
     this.loginService.login(data).subscribe({
-      next: () => {
+      next: (user) => {
         this.message = "Successfull login";
-        this.auth.setUsername(this.username);
+        this.auth.setUserId((user as User ).userId.toString());
         this.auth.changeLoginStatusTrue();
         this.router.navigate(["/home"]);
       },
@@ -43,8 +45,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.handleError(error);
       }
     });
-
-
   }
 
   handleError(error: HttpErrorResponse) {

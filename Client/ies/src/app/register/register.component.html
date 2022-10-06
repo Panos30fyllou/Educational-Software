@@ -21,13 +21,13 @@
 
         <mat-form-field appearance="outline">
             <mat-label>First name</mat-label>
-            <input type="text" name="firstName" [(ngModel)]="data.firstName" matInput required>
+            <input type="text" name="firstName" [(ngModel)]="data.name" matInput required>
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="outline">
             <mat-label>Last name</mat-label>
-            <input type="text" name="lastName" [(ngModel)]="data.lastName" matInput required>
+            <input type="text" name="lastName" [(ngModel)]="data.surname" matInput required>
         </mat-form-field>
         <br>
 
@@ -37,6 +37,16 @@
                 [(ngModel)]="data.email" matInput required>
         </mat-form-field>
         <br>
+
+        <mat-form-field appearance="outline" >
+            <mat-label>Role</mat-label>
+            <mat-select matInput appearance="outline" name="role" [(ngModel)]="data.role" [(value)]="data.role">
+                <mat-option *ngFor="let role of roles" [value]="role">{{getRoleDescription(role)}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <br>
+
         <button type="submit" mat-raised-button color="primary">Register</button>
         <br><br>
         <div>Already have an account?</div>

@@ -1,7 +1,7 @@
 <mat-card class="carduser" style="width: 50%; text-align:center">
     <br>
     <mat-card-title class="card_title">Profile</mat-card-title>
-    <form #userData="ngForm" class="insertForm">
+    <form #userData="ngForm" (ngSubmit)="onSubmit(profile)"class="insertForm">
         <div class="container">
             <div class="row">
                 <div class="col-6">
@@ -12,13 +12,13 @@
                 <div class="col-6">
                     <mat-form-field appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input type="text" name="firstName" [(ngModel)]="user.firstName" matInput required>
+                        <input type="text" name="firstName" [(ngModel)]="profile.name" matInput required>
                     </mat-form-field>
                 </div>
                 <div class="col-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input type="text" name="lastName" [(ngModel)]="user.lastName" matInput required>
+                        <input type="text" name="lastName" [(ngModel)]="profile.surname" matInput required>
                     </mat-form-field>
                 </div>
             </div>
@@ -40,13 +40,15 @@
                 <div class="col-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input type="email" name="email" [(ngModel)]="user.email" matInput required [email]="true">
+                        <input type="email" name="email" [(ngModel)]="profile.email" matInput required [email]="true">
                     </mat-form-field>
                 </div>
             </div>
         </div>
         <br>
-        <button type="submit" mat-raised-button color="primary" class="saveButton">Save</button>
+        <mat-card-actions>
+            <button type="submit" mat-raised-button color="primary" class="saveButton">Save</button>
+        </mat-card-actions>
         <br>
         <br>
     </form>

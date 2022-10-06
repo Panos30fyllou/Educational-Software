@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
 import { LessonsService } from 'src/app/services/lessons.service';
 import { LessonListItem } from '../../models/lesson-list-item';
 
@@ -9,17 +10,19 @@ import { LessonListItem } from '../../models/lesson-list-item';
   styleUrls: ['./lessons.component.scss']
 })
 export class LessonsComponent implements OnInit {
-
+  lessonIds: number[] = [];
   lessons: LessonListItem[] = []
   constructor(
     private lessonsSrv: LessonsService,
     private router: Router) { }
 
   ngOnInit(): void {
-    // for (let i = 0; i < 5; i++)
-    //   this.lessons.push(new LessonListItem())
-    this.lessonsSrv.getLessonListItems().subscribe({next: (res) => {this.lessons = res;
-    console.log(this.lessons)}})
+    this.lessonsSrv.getLessons$.subscribe({
+      next: (res) => {
+        this.lessons = res;
+      }
+    });
+
   }
 
   openLesson(id: number) {

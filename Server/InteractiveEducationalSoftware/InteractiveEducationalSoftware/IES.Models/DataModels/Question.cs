@@ -1,7 +1,10 @@
-﻿namespace IES.Models.DataModels
+﻿using Dapper.Contrib.Extensions;
+
+namespace IES.Models.DataModels
 {
     public class Question
     {
+        [Key]
         public int QuestionId { get; set; }
         public int ChapterId { get; set; }
         public string Description { get; set; }

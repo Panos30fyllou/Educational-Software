@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Repositories
 {
-    public interface IUsersRepository : IRepository<User, int>
+    public interface IUsersRepository : ICommonRepository<User, int>
     {
         public User Login(string username, string password);
     }

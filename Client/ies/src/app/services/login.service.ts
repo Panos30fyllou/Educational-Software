@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
+import { RegisterRequest } from '../models/register-request';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,13 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(data: Observable<User>) {
+  login(data: Observable<User>){
     this.url = environment.serverUrl + "/Users/Login";
-
     return this.http.post(this.url, data);
   }
 
-  register(data: User) {
+  register(data: RegisterRequest) {
     this.url = environment.serverUrl + "/Users/Register";
-
     return this.http.post(this.url, data);
   }
 }

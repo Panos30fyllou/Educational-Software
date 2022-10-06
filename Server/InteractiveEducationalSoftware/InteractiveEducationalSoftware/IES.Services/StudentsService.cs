@@ -4,37 +4,33 @@ using IES.Models.DataModels;
 
 namespace IES.Services
 {
-    public class QuestionsService : IQuestionsService
+    public class StudentsService : IStudentsService
     {
-        private IQuestionsRepository _questionRepository;
+        private IStudentsRepository _studentRepository;
 
         public string ConnectionString { get; set; }
 
-        public QuestionsService(IQuestionsRepository questionRepository)
+        public StudentsService(IStudentsRepository studentRepository)
         {
-            _questionRepository = questionRepository;
-        }
-        public List<Question> GetQuestionsForTest()
-        {
-            return _questionRepository.SelectFive();
+            _studentRepository = studentRepository;
         }
 
-        public List<Question> SelectAll()
+        public List<Student> SelectAll()
         {
             throw new NotImplementedException();
         }
 
-        public Question SelectById(int id)
+        public Student SelectById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public int Insert(Question entity)
+        public int Insert(Student entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Question entity)
+        public void Update(Student entity)
         {
             throw new NotImplementedException();
         }

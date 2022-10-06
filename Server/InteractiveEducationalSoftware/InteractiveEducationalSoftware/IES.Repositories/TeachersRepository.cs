@@ -9,33 +9,33 @@ using System.Data.SqlClient;
 
 namespace IES.Repositories
 {
-    public class UsersRepository : CommonRepository<User, int>, IUsersRepository
+    public class TeachersRepository : CommonRepository<Teacher, int>, ITeachersRepository
     {
-        public UsersRepository(IDbConfig dbConfig) : base(dbConfig)
+        public TeachersRepository(IDbConfig dbConfig) : base(dbConfig)
         {
             ConnectionString = dbConfig.ConnectionString;
         }
 
-        public User Login(string username, string password)
+        public Teacher SelectByUserId(int userId)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var user = db.QueryFirstOrDefault<User>(@"SELECT * FROM Users WHERE [Username]=@username AND [Password]=@password", new { username, password });
+                var teacher = db.QueryFirstOrDefault<Teacher>(@"SELECT * FROM Teachers WHERE [UserId] = @userId", new { userId });
                 db.Close();
-                return user;
+                return teacher;
             }
         }
 
-        public override void Update(User user)
+        public void UpdateTeacherProfileByUserId(Profile profile)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
                 db.QueryFirstOrDefault<Student>(@"
-                    UPDATE Users 
-                    SET [Username] = @Username, [Email] = @Email
-                    WHERE [UserId] = @userId", new { Username = user.Username, Email = user.Email, UserId = user.UserId });
+                    UPDATE Teachers 
+                    SET [Name] = @Name, [Surname] = @Surname
+                    WHERE [UserId] = @userId", new { Name = profile.Name, Surname = profile.Surname, UserId = profile.UserId });
                 db.Close();
             }
         }

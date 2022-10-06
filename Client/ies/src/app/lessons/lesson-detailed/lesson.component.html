@@ -1,12 +1,16 @@
-<mat-card style="margin: 2vh;">
+<mat-card style="margin: 2vh; width: 50%; margin: auto;" class="scrollable-content">
     <mat-card-title>
-        {{lesson.name}} - {{lesson.chapter}}
+        Chapter: {{lesson.chapter}}
     </mat-card-title>
     <mat-card-subtitle>
-        {{lesson.description}}
+        {{lesson.name}} - {{lesson.description}}
     </mat-card-subtitle>
-    <mat-card-content>
-        {{lesson.material}}
+    <mat-card-content style="height: 70vh;">
+        <p [innerText]="lesson.material"></p>
     </mat-card-content>
-    <button>Take Test</button>
+    <div style="width:100%; display: inline-flex; justify-content:space-around">
+        <button mat-button (click)="goToLesson(-1)">Previous Lesson</button>
+        <button mat-button>Complete Lesson</button>
+        <button mat-button (click)="goToLesson(1)">Next Lesson</button>
+    </div>
 </mat-card>

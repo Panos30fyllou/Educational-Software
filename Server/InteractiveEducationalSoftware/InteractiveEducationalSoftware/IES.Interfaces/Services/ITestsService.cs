@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Services
 {
-    public interface ITestsService : IService<Test, int>
+    public interface ITestsService : ICommonService<Test, int>
     {
         public Test GenerateTest();
     }

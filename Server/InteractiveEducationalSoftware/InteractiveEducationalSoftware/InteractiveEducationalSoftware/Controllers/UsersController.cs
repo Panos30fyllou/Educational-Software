@@ -23,17 +23,32 @@ namespace IES.WebHost.Controllers
         [Route("[action]")]
         public ActionResult Login([FromBody] LoginRequest loginRequest)
         {
-            User user2;
+            User user;
             try
             {
-                user2 = _userService.Login(loginRequest.Username, loginRequest.Password);
+                user = _userService.Login(loginRequest);
             }
             catch (BusinessException e)
             {
                 return BadRequest(e.Message);
             }
 
-            return Ok(user2);
+            return Ok(user);
+        }
+
+        [HttpPost]
+        [Route("[action]")]
+        public ActionResult Register([FromBody] RegisterRequest user)
+        {
+            try
+            {
+                _userService.Register(user);
+            }
+            catch (BusinessException e)
+            {
+                return BadRequest(e.Message);
+            }
+            return Ok();
         }
 
         [HttpPost]
@@ -70,11 +85,11 @@ namespace IES.WebHost.Controllers
 
         [HttpPut]
         [Route("[action]")]
-        public ActionResult Update(User user)
+        public ActionResult Update(Profile profile)
         {
             try
             {
-                _userService.Update(user);
+                _userService.UpdateProfile(profile);
             }
             catch (BusinessException e)
             {
@@ -88,17 +103,17 @@ namespace IES.WebHost.Controllers
         [Route("[action]")]
         public ActionResult SelectById(int id)
         {
-            User user;
+            Profile profile;
             try
             {
-                user = _userService.SelectById(id);
+                profile = _userService.GetUserProfile(id);
             }
             catch (BusinessException e)
             {
                 return BadRequest(e.Message);
             }
 
-            return Ok(user);
+            return Ok(profile);
         }
 
         //[HttpGet]

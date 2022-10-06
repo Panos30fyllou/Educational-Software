@@ -17,7 +17,6 @@ namespace IES.Services
         {
             _lessonRepository = lessonRepository;
             _chapterRepository = chapterRepository;
-
         }
 
 
@@ -25,7 +24,6 @@ namespace IES.Services
         {
             return _lessonRepository.SelectViewModels();
         }
-
 
 
         public void Delete(int id)
@@ -54,11 +52,6 @@ namespace IES.Services
             return lesson;
         }
 
-        public void Insert(Lesson lesson)
-        {
-            throw new NotImplementedException();
-
-        }
 
         public void Update(Lesson lesson)
         {
@@ -66,6 +59,17 @@ namespace IES.Services
 
 
         public List<Lesson> SelectAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AddLessonByTeacher(LessonEntity lesson)
+        {
+            lesson.Material = lesson.Material.Replace(Environment.NewLine, "<br />");
+            return _lessonRepository.Insert(lesson);
+        }
+
+        public int Insert(Lesson lesson)
         {
             throw new NotImplementedException();
         }

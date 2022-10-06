@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Repositories
 {
-    public interface ITestsRepository : IRepository<Test, int>
+    public interface ITestsRepository : ICommonRepository<Test, int>
     {
     }
 }

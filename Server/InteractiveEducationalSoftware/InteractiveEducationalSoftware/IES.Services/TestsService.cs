@@ -21,43 +21,35 @@ namespace IES.Services
 
         public Test GenerateTest()
         {
-            return new Test() { 
-                Questions = _questionRepository.SelectFive() 
+            return new Test()
+            {
+                Questions = _questionRepository.SelectFive()
             };
-        }
-
-        public void Insert(Test test)
-        {
-            _testRepository.Insert(test);
-        }
-
-        public void Delete(int id)
-        {
-            var test = _testRepository.SelectById(id);
-            if (test == null)
-                throw new BusinessException("Test not found!");
-            _testRepository.Delete(test);
         }
 
         public List<Test> SelectAll()
         {
-            var testsList = _testRepository.SelectAll();
-            return testsList;
+            throw new NotImplementedException();
         }
 
         public Test SelectById(int id)
         {
-            var test = _testRepository.SelectById(id);
-            if (test == null)
-                throw new BusinessException("Test not found!");
-            return test;
+            throw new NotImplementedException();
         }
 
-        public void Update(Test test)
+        public int Insert(Test entity)
         {
-            _testRepository.SelectById(test.TestId);
-            _testRepository.Update(test);
+            throw new NotImplementedException();
+        }
+
+        public void Update(Test entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
-
 }

@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Services
 {
-    public interface IQuestionsService : IService<Question, int>
+    public interface IQuestionsService : ICommonService<Question, int>
     {
         public List<Question> GetQuestionsForTest();
     }

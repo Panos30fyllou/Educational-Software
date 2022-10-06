@@ -1,6 +1,7 @@
 ﻿using IES.Interfaces.Services;
 using IES.Models;
 using IES.Models.BusinessModels;
+using IES.Models.DataModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 
@@ -54,11 +55,11 @@ namespace IES.WebHost.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public ActionResult Add(Lesson lesson)
+        public ActionResult Add(LessonEntity lesson)
         {
             try
             {
-                _lessonService.Insert(lesson);
+                _lessonService.AddLessonByTeacher(lesson);
             }
             catch (BusinessException e)
             {

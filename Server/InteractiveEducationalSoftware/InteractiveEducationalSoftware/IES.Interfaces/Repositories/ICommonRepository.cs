@@ -1,10 +1,10 @@
 ﻿namespace IES.Interfaces.Repositories
 {
-    public interface IRepository<T, TKey>
+    public interface ICommonRepository<T, TKey> where T : class
     {
         List<T> SelectAll();
         T SelectById(TKey id);
-        void Insert(T entity);
+        int Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
     }

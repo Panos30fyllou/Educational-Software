@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Repositories
 {
-    public interface IChaptersRepository : IRepository<Chapter, int>
+    public interface IChaptersRepository : ICommonRepository<Chapter, int>
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace IES.Interfaces.Repositories
 {
-    public interface IQuestionsRepository : IRepository<Question, int>
+    public interface IQuestionsRepository : ICommonRepository<Question, int>
     {
         public List<Question> SelectFive();
     }
