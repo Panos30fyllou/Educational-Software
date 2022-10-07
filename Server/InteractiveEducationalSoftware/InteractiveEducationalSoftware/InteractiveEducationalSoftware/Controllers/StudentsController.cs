@@ -1,7 +1,6 @@
 ﻿using IES.Interfaces.Services;
 using IES.Models;
 using IES.Models.BusinessModels;
-using IES.Models.DataModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 
@@ -21,7 +20,7 @@ namespace IES.WebHost.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public ActionResult CompletedLesson(StudentLessonProgress progress)
+        public ActionResult CompletedLesson([FromBody] StudentLessonProgress progress)
         {
             try
             {

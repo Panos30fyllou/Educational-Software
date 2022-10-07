@@ -51,12 +51,12 @@ namespace IES.Repositories
                     IF(SELECT 1 FROM StudentLessonsProgress WHERE [StudentId] = @StudentId AND [LessonId] = @LessonId) IS NULL
                         BEGIN
 	                        INSERT INTO StudentLessonsProgress
-	                        VALUES(@StudentId, LessonId, 1, GETUTCDATE())
+	                        VALUES(@StudentId, @LessonId, 1, GETUTCDATE())
 	                    END
                     ELSE
                         BEGIN
 	                        UPDATE StudentLessonsProgress
-	                        SET [Completed] = @Completed, [DateCompleted] = DateCompleted
+	                        SET [Completed] = @Completed, [DateCompleted] = @DateCompleted
 	                        WHERE [StudentId] = @StudentId AND [LessonId] = @LessonId
 	                    END
                 ", new { StudentId = progress.StudentId, LessonId = progress.LessonId, Completed = progress.Completed, DateCompleted = progress.DateCompleted });

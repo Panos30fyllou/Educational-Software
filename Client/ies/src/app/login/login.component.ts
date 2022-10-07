@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginService.login(data).subscribe({
       next: (user) => {
         this.message = "Successfull login";
-        this.auth.setUserId((user as User ).userId.toString());
+        this.auth.setUserId((user as User).userId.toString());
         this.auth.changeLoginStatusTrue();
         this.router.navigate(["/home"]);
       },

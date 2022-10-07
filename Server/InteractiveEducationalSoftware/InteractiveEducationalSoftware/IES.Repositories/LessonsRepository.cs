@@ -34,5 +34,16 @@ namespace IES.Repositories
                 return viewModels;
             }
         }
+
+        public StudentLessonProgress GetLessonProgress(int lessonId, int studentId)
+        {
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+            {
+                db.Open();
+                var progress = db.Query<StudentLessonProgress>(@"SELECT * FROM StudentLessonsProgress WHERE [LessonId] = @lessonId AND [StudentId] = @studentId", new { lessonId, studentId }).FirstOrDefault();
+                db.Close();
+                return progress;
+            }
+        }
     }
 }

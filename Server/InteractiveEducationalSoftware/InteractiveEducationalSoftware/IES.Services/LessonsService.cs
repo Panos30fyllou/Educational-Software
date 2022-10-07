@@ -63,5 +63,10 @@ namespace IES.Services
             //lesson.Material = lesson.Material.Replace(Environment.NewLine, "<br />");
             return _lessonRepository.Insert(lesson);
         }
+
+        public StudentLessonProgress GetLessonProgress(int lessonId, int studentId)
+        {
+            return _lessonRepository.GetLessonProgress(lessonId, studentId);
+        }
     }
 }

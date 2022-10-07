@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { RegisterRequest } from '../models/register-request';
@@ -16,7 +16,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(data: Observable<User>){
+  login(data: Observable<User>) {
     this.url = environment.serverUrl + "/Users/Login";
     return this.http.post(this.url, data);
   }

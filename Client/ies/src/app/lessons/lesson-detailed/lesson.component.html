@@ -12,7 +12,7 @@
         <button mat-icon-button>
             <mat-icon (click)="goToLesson(-1)">chevron_left</mat-icon>
         </button>
-        <button mat-button>Complete Lesson</button>
+        <button mat-button (click)="changeLessonStatus()">{{getChangeLessonStatusButtonText()}}</button>
         <button mat-icon-button>
             <mat-icon (click)="goToLesson(1)">chevron_right</mat-icon>
         </button>

@@ -2,6 +2,7 @@
 using IES.Models;
 using IES.Models.BusinessModels;
 using IES.Models.DataModels;
+using IES.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 
@@ -85,6 +86,23 @@ namespace IES.WebHost.Controllers
             }
 
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult GetLessonProgress(int lessonId, int studentId)
+        {
+            StudentLessonProgress progress;
+            try
+            {
+                progress = _lessonService.GetLessonProgress(lessonId, studentId);
+            }
+            catch (BusinessException e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(progress);
         }
     }
 }

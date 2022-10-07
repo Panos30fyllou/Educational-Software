@@ -6,5 +6,6 @@ namespace IES.Interfaces.Repositories
     public interface ILessonsRepository : ICommonRepository<LessonEntity, int>
     {
         public List<LessonListItem> SelectViewModels();
+        public StudentLessonProgress GetLessonProgress(int lessonId, int studentId);
     }
 }

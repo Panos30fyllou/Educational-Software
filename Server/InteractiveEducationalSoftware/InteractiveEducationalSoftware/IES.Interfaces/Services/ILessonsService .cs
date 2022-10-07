@@ -9,5 +9,6 @@ namespace IES.Interfaces.Services
         public List<LessonListItem> SelectLessonListItems();
         public int AddLessonByTeacher(LessonEntity lesson);
         List<Chapter> GetAllChapters();
+        public StudentLessonProgress GetLessonProgress(int lessonId, int studentId);
     }
 }
