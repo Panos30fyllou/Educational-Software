@@ -1,19 +1,32 @@
-<mat-card style="margin: 2vh;">
-    <mat-card-title>
-        {{test.chapter}}
-    </mat-card-title>
-    <mat-card-content>
-        <div *ngFor="let question of test.questions">
-            <h1>
-                {{question.description}}
-            </h1>
-            <mat-radio-group>
-                <mat-radio-button *ngFor="let answer of question.possibleAnswers">
-                    {{answer.description}}
-                </mat-radio-button>
-            </mat-radio-group>
-        </div>
+<div style="width: 100%">
+    <mat-card style="margin: auto;">
+        <mat-card-title>
+            {{test.chapter}}
+        </mat-card-title>
+        <mat-card-content>
+            <div>
+                <h1>
+                    {{question?.description}}
+                </h1>
+                <mat-radio-group [(ngModel)]="userAnswerIds[index]">
+                    <div style="display: inline-flex; flex-direction:column">
+                        <mat-radio-button style="margin: 1vw;" [value]="answer.answerId" 
+                            *ngFor="let answer of question?.possibleAnswers">
+                            {{answer.description}}
+                        </mat-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
 
-    </mat-card-content>
-    <button>Take Test</button>
-</mat-card>
+        </mat-card-content>
+        <div style="width:100%; display: inline-flex; justify-content:space-around">
+            <button mat-icon-button>
+                <mat-icon (click)="goToQuestion(-1)">chevron_left</mat-icon>
+            </button>
+            <button mat-button *ngIf="index === test.questions.length-1" (click)="submitAnswers()">Submit Answers</button>
+            <button mat-icon-button>
+                <mat-icon (click)="goToQuestion(1)">chevron_right</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+</div>

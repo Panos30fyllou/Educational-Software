@@ -16,10 +16,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRadioModule } from '@angular/material/radio';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSortModule } from '@angular/material/sort';
@@ -73,7 +74,9 @@ import { RegisterComponent } from './register/register.component';
     MatTooltipModule,
     MatDatepickerModule,
     MatSortModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressBarModule, 
+    MatDialogModule
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent]

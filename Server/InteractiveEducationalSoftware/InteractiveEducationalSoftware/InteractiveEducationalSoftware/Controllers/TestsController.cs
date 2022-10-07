@@ -1,5 +1,6 @@
 ﻿using IES.Interfaces.Services;
 using IES.Models;
+using IES.Models.BusinessModels;
 using IES.Models.DataModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
@@ -20,28 +21,12 @@ namespace IES.WebHost.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public ActionResult Generate()
+        public ActionResult Generate(int startingChapterId, int endingChapterId)
         {
             Test test;
             try
             {
-                test = _testService.GenerateTest();
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok(test);
-        }
-
-        [HttpGet]
-        public ActionResult Get()
-        {
-            Test test;
-            try
-            {
-                test = _testService.GenerateTest();
+                test = _testService.GenerateTest(startingChapterId, endingChapterId);
             }
             catch (BusinessException e)
             {
@@ -53,11 +38,11 @@ namespace IES.WebHost.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public ActionResult Add(Test test)
+        public ActionResult SubmitResult([FromBody] TestResult result)
         {
             try
             {
-                _testService.Insert(test);
+                _testService.SubmitResult(result);
             }
             catch (BusinessException e)
             {
@@ -65,65 +50,15 @@ namespace IES.WebHost.Controllers
             }
 
             return Ok();
-        }
-
-        [HttpDelete]
-        [Route("[action]")]
-        public ActionResult Remove(int id)
-        {
-            try
-            {
-                _testService.Delete(id);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok();
-        }
-
-        [HttpPut]
-        [Route("[action]")]
-        public ActionResult Update(Test test)
-        {
-            try
-            {
-                _testService.Update(test);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok();
-        }
-
-        [HttpGet]
-        [Route("[action]")]
-        public ActionResult SelectById(int id)
-        {
-            Test test;
-            try
-            {
-                test = _testService.SelectById(id);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok(test);
         }
 
         //[HttpGet]
-        //[Route("[action]")]
-        //public ActionResult SelectViewModelById(int id)
+        //public ActionResult Get()
         //{
         //    Test test;
         //    try
         //    {
-        //        test = _testService.SelectViewModelById(id);
+        //        test = _testService.GenerateTest();
         //    }
         //    catch (BusinessException e)
         //    {
@@ -133,38 +68,37 @@ namespace IES.WebHost.Controllers
         //    return Ok(test);
         //}
 
-        [HttpGet]
-        [Route("[action]")]
-        public ActionResult SelectAll()
-        {
-            List<Test> tests;
-            try
-            {
-                tests = _testService.SelectAll();
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok(tests);
-        }
-
-        //[HttpGet]
+        //[HttpPost]
         //[Route("[action]")]
-        //public ActionResult SelectAllViewModels()
+        //public ActionResult Add(Test test)
         //{
-        //    List<TestViewModel> tests;
         //    try
         //    {
-        //        tests = _testService.SelectAllViewModels();
+        //        _testService.Insert(test);
         //    }
         //    catch (BusinessException e)
         //    {
         //        return BadRequest(e.Message);
         //    }
 
-        //    return Ok(tests);
+        //    return Ok();
+        //}
+
+        //[HttpGet]
+        //[Route("[action]")]
+        //public ActionResult SelectById(int id)
+        //{
+        //    Test test;
+        //    try
+        //    {
+        //        test = _testService.SelectById(id);
+        //    }
+        //    catch (BusinessException e)
+        //    {
+        //        return BadRequest(e.Message);
+        //    }
+
+        //    return Ok(test);
         //}
     }
 }

@@ -51,38 +51,6 @@ namespace IES.WebHost.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        [Route("[action]")]
-        public ActionResult Add(User user)
-        {
-            try
-            {
-                _userService.Insert(user);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok();
-        }
-
-        [HttpDelete]
-        [Route("[action]")]
-        public ActionResult Remove(int id)
-        {
-            try
-            {
-                _userService.Delete(id);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok();
-        }
-
         [HttpPut]
         [Route("[action]")]
         public ActionResult Update(Profile profile)
@@ -115,56 +83,5 @@ namespace IES.WebHost.Controllers
 
             return Ok(profile);
         }
-
-        //[HttpGet]
-        //[Route("[action]")]
-        //public ActionResult SelectViewModelById(int id)
-        //{
-        //    User user;
-        //    try
-        //    {
-        //        user = _userService.SelectViewModelById(id);
-        //    }
-        //    catch (BusinessException e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-
-        //    return Ok(user);
-        //}
-
-        [HttpGet]
-        [Route("[action]")]
-        public ActionResult SelectAll()
-        {
-            List<User> users;
-            try
-            {
-                users = _userService.SelectAll();
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok(users);
-        }
-
-        //[HttpGet]
-        //[Route("[action]")]
-        //public ActionResult SelectAllViewModels()
-        //{
-        //    List<UserViewModel> users;
-        //    try
-        //    {
-        //        users = _userService.SelectAllViewModels();
-        //    }
-        //    catch (BusinessException e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-
-        //    return Ok(users);
-        //}
     }
 }

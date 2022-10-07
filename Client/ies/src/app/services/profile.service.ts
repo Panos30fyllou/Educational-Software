@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Profile } from '../models/profile';
@@ -20,4 +20,13 @@ export class ProfileService {
     return this.http.put<Profile>(this.url, profile);
   }
 
+  getProgressById(id: number): Observable<number> {
+    this.url = environment.serverUrl + `/Students/GetProgress`;
+    return this.http.get<number>(this.url, { params: new HttpParams().set("id", id) });
+  }
+
+  getAverageTestScoreById(id: number): Observable<number> {
+    this.url = environment.serverUrl + `/Students/GetAverageTestScore`;
+    return this.http.get<number>(this.url, { params: new HttpParams().set("id", id) });
+  }
 }

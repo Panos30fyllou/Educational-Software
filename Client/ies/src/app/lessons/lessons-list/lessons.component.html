@@ -1,12 +1,14 @@
 <div style="display: inline-flex;
+flex-wrap:wrap;
 width: -webkit-fill-available;
 padding: 5vh;">
-    <mat-card *ngFor=" let lesson of lessons" style="margin: 2vh;" (click)="openLesson(lesson.lessonId)">
+    <mat-card *ngFor=" let lesson of lessons" style="margin: 2vh; max-width: 15vw;"
+        (click)="openLesson(lesson.lessonId)" [matTooltip]="lesson.description">
         <mat-card-title>
-            {{lesson.chapter}}
+            {{lesson.name}}
         </mat-card-title>
         <mat-card-content>
-            {{lesson.description}}
+            Chapter: {{lesson.chapter}}
         </mat-card-content>
     </mat-card>
 </div>

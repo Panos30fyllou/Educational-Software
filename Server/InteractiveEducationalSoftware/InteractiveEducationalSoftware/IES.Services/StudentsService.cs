@@ -1,43 +1,35 @@
 ﻿using IES.Interfaces.Repositories;
 using IES.Interfaces.Services;
-using IES.Models.DataModels;
+using IES.Models.BusinessModels;
 
 namespace IES.Services
 {
     public class StudentsService : IStudentsService
     {
         private IStudentsRepository _studentRepository;
+        private ILessonsRepository _lessonsRepository;
 
         public string ConnectionString { get; set; }
 
-        public StudentsService(IStudentsRepository studentRepository)
+        public StudentsService(IStudentsRepository studentRepository, ILessonsRepository lessonsRepository)
         {
             _studentRepository = studentRepository;
+            _lessonsRepository = lessonsRepository;        }
+
+        public void UpdateProgress(StudentLessonProgress progress)
+        {
+            _studentRepository.UpdateProgress(progress);
         }
 
-        public List<Student> SelectAll()
+        public decimal GetProgress(int studentId)
         {
-            throw new NotImplementedException();
+            return _studentRepository.GetProgress(studentId);
         }
 
-        public Student SelectById(int id)
+        public decimal GetAverageScore(int studentId)
         {
-            throw new NotImplementedException();
+            return _studentRepository.GetAverageScore(studentId);
         }
 
-        public int Insert(Student entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Student entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

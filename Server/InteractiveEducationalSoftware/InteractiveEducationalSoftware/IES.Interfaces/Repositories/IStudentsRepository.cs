@@ -7,5 +7,8 @@ namespace IES.Interfaces.Repositories
     {
         public Student SelectByUserId(int userId);
         public void UpdateStudentProfileByUserId(Profile profile);
+        void UpdateProgress(StudentLessonProgress progress);
+        decimal GetProgress(int studentId);
+        decimal GetAverageScore(int studentId);
     }
 }

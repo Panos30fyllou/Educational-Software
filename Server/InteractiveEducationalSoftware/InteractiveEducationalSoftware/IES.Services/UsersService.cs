@@ -42,11 +42,6 @@ namespace IES.Services
                 _teachersRepository.Insert(new Teacher() { UserId = id, Name = request.Name, Surname = request.Surname });
         }
 
-        public List<User> SelectAll()
-        {
-            throw new NotImplementedException();
-        }
-
         public Profile GetUserProfile(int id)
         {
             var user = _userRepository.SelectById(id);
@@ -62,30 +57,16 @@ namespace IES.Services
                 Student student = _studentsRepository.SelectByUserId(id);
                 profile.Name = student.Name;
                 profile.Surname = student.Surname;
+                profile.RoleId = student.StudentId;
             }
             if (user.Role == UserRole.Teacher)
             {
                 Teacher teacher = _teachersRepository.SelectByUserId(id);
                 profile.Name = teacher.Name;
                 profile.Surname = teacher.Surname;
-
+                profile.RoleId = teacher.TeacherId;
             }
             return profile;
-        }
-
-        public User SelectById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Insert(User entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(User entity)
-        {
-            throw new NotImplementedException();
         }
 
         public void UpdateProfile(Profile profile)
@@ -102,10 +83,6 @@ namespace IES.Services
 
         }
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }

@@ -5,6 +5,7 @@ import { User } from '../models/user';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LessonListItem } from '../models/lesson-list-item';
 import { Lesson } from '../models/lesson';
+import { Chapter } from '../models/chapter';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,10 @@ export class LessonsService {
   getLessonById(id: number): Observable<Lesson> {
     this.url = environment.serverUrl + `/Lessons/SelectById`;
     return this.http.get<Lesson>(this.url, { params: new HttpParams().set("id", id) });
+  }
+
+  getChapters(): Observable<Chapter[]> {
+    this.url = environment.serverUrl + "/Lessons/GetAllChapters";
+    return this.http.get<Chapter[]>(this.url);
   }
 }

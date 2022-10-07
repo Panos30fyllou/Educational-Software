@@ -14,6 +14,7 @@ namespace IES.WebHost.Controllers
     {
         private ILessonsService _lessonService;
 
+
         public LessonsController(ILessonsService lessonService)
         {
             _lessonService = lessonService;
@@ -53,6 +54,23 @@ namespace IES.WebHost.Controllers
             return Ok(lesson);
         }
 
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult GetAllChapters()
+        {
+            List<Chapter> chapters;
+            try
+            {
+                chapters = _lessonService.GetAllChapters();
+            }
+            catch (BusinessException e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(chapters);
+        }
+
         [HttpPost]
         [Route("[action]")]
         public ActionResult Add(LessonEntity lesson)
@@ -68,42 +86,5 @@ namespace IES.WebHost.Controllers
 
             return Ok();
         }
-
-        [HttpDelete]
-        [Route("[action]")]
-        public ActionResult Remove(int id)
-        {
-            try
-            {
-                _lessonService.Delete(id);
-            }
-            catch (BusinessException e)
-            {
-                return BadRequest(e.Message);
-            }
-
-            return Ok();
-        }
-
-       
-        //[HttpGet]
-        //[Route("[action]")]
-        //public ActionResult SelectViewModelById(int id)
-        //{
-        //    Lesson Lesson;
-        //    try
-        //    {
-        //        Lesson = _LessonService.SelectViewModelById(id);
-        //    }
-        //    catch (BusinessException e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-
-        //    return Ok(Lesson);
-        //}
-
-
-
     }
 }

@@ -1,8 +1,39 @@
 <div>
     <mat-card *ngFor="let test of tests" style="margin-bottom: 2vh;">
-
         <mat-card-title>
             {{test.testId}}
         </mat-card-title>
+    </mat-card>
+
+    <mat-card style="margin-bottom: 2vh; width:30vw" (onclick)="generateNewTest()">
+        <mat-card-title style="margin: 1vw; text-align:center">
+            Take New Test
+        </mat-card-title>
+
+        <mat-card-content>
+            <div style="display:inline-flex; width: 100%; justify-content: space-around;">
+                <div class="col-6" style="margin: 2vw;">
+                    <mat-card-subtitle class="sub">Starting Chapter</mat-card-subtitle>
+
+                    <mat-select [value]="startingChapterId" style="width: 8vw;">
+                        <mat-option *ngFor="let chapter of chapters" [value]="chapter.chapterId">{{chapter.name}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <div class="col-6" style="margin: 2vw;">
+
+                    <mat-card-subtitle class="sub">Ending Chapter</mat-card-subtitle>
+
+                    <mat-select [value]="endingChapterId" style="width: 8vw;">
+                        <mat-option *ngFor="let chapter of chapters" [value]="chapter.chapterId">{{chapter.name}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+            <button mat-button (click)="generateNewTest()">Start</button>
+        </div>
+        </mat-card-content>
     </mat-card>
 </div>

@@ -1,6 +1,7 @@
 ﻿using IES.Interfaces.Repositories;
 using IES.Interfaces.Services;
 using IES.Models;
+using IES.Models.BusinessModels;
 using IES.Models.DataModels;
 
 namespace IES.Services
@@ -19,37 +20,18 @@ namespace IES.Services
 
         }
 
-        public Test GenerateTest()
+        public Test GenerateTest(int startingChapterId, int endingChapterId)
         {
             return new Test()
             {
-                Questions = _questionRepository.SelectFive()
+                Questions = _questionRepository.SelectFive(startingChapterId, endingChapterId)
             };
         }
 
-        public List<Test> SelectAll()
+        public void SubmitResult(TestResult result)
         {
-            throw new NotImplementedException();
-        }
-
-        public Test SelectById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Insert(Test entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Test entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
+            _questionRepository.InsertWrongAnswerdQuestions(result.StudentId, result.WrongQuestionIds, result.Date);
+            _testRepository.SaveTestResult(result);
         }
     }
 }

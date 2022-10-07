@@ -53,26 +53,15 @@ namespace IES.Services
         }
 
 
-        public void Update(Lesson lesson)
+        public List<Chapter> GetAllChapters()
         {
-        }
-
-
-        public List<Lesson> SelectAll()
-        {
-            throw new NotImplementedException();
+            return _chapterRepository.SelectAll();
         }
 
         public int AddLessonByTeacher(LessonEntity lesson)
         {
-            lesson.Material = lesson.Material.Replace(Environment.NewLine, "<br />");
+            //lesson.Material = lesson.Material.Replace(Environment.NewLine, "<br />");
             return _lessonRepository.Insert(lesson);
         }
-
-        public int Insert(Lesson lesson)
-        {
-            throw new NotImplementedException();
-        }
     }
-
 }

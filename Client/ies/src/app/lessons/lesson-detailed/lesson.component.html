@@ -9,8 +9,12 @@
         <p [innerText]="lesson.material"></p>
     </mat-card-content>
     <div style="width:100%; display: inline-flex; justify-content:space-around">
-        <button mat-button (click)="goToLesson(-1)">Previous Lesson</button>
+        <button mat-icon-button>
+            <mat-icon (click)="goToLesson(-1)">chevron_left</mat-icon>
+        </button>
         <button mat-button>Complete Lesson</button>
-        <button mat-button (click)="goToLesson(1)">Next Lesson</button>
+        <button mat-icon-button>
+            <mat-icon (click)="goToLesson(1)">chevron_right</mat-icon>
+        </button>
     </div>
 </mat-card>

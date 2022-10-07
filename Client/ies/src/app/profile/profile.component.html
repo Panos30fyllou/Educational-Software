@@ -1,43 +1,51 @@
 <mat-card class="carduser" style="width: 50%; text-align:center">
     <br>
     <mat-card-title class="card_title">Profile</mat-card-title>
-    <form #userData="ngForm" (ngSubmit)="onSubmit(profile)"class="insertForm">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <mat-card-subtitle class="sub">Personal Info</mat-card-subtitle>
+
+    <div class="container">
+        <mat-card style="margin: 0 1vw; margin: auto;">
+            <mat-card-subtitle class="card_title">Statistics</mat-card-subtitle>
+            <mat-card-content>
+                <div class="col-6" style="width: 100%;">
+                    <div style="margin: auto;">
+                        <mat-label>Lessons' Progress: </mat-label>
+                        <mat-label>{{lessonsProgress}}</mat-label>
+                        <mat-progress-bar [value]="lessonsProgress"></mat-progress-bar>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
+                <br>
+                <div class="col-6" style="width: 100%;">
+                    <div style="width: 80%; margin: auto;">
+                        <mat-label>Average Test Score: </mat-label>
+                        <mat-label>{{avgTestScore}}</mat-label>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <br><br>
+    <mat-divider class="divider"></mat-divider>
+    <br><br>
+    <form #userData="ngForm" (ngSubmit)="onSubmit(profile)" class="insertForm">
+        <div class="container" style="margin: auto;">
+            <div class="row" style="display:inline-flex; width:100%; justify-content: space-around;">
+                <div class="col-6" style="width: 20vw;">
+                    <div class="col-6">
+                        <mat-card-subtitle class="sub">Personal Info</mat-card-subtitle>
+                    </div>
                     <mat-form-field appearance="outline">
                         <mat-label>First Name</mat-label>
                         <input type="text" name="firstName" [(ngModel)]="profile.name" matInput required>
                     </mat-form-field>
-                </div>
-                <div class="col-6">
                     <mat-form-field appearance="outline">
                         <mat-label>Last Name</mat-label>
                         <input type="text" name="lastName" [(ngModel)]="profile.surname" matInput required>
                     </mat-form-field>
                 </div>
-            </div>
-        </div>
-
-        <br>
-
-        <mat-divider class="divider"></mat-divider>
-
-        <br>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <mat-card-subtitle class="sub">Contact Info</mat-card-subtitle>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
+                <div class="col-6" style="width: 20vw;">
+                    <div class="col-6">
+                        <mat-card-subtitle class="sub">Contact Info</mat-card-subtitle>
+                    </div>
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
                         <input type="email" name="email" [(ngModel)]="profile.email" matInput required [email]="true">
@@ -45,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <br>
+
         <mat-card-actions>
             <button type="submit" mat-raised-button color="primary" class="saveButton">Save</button>
         </mat-card-actions>

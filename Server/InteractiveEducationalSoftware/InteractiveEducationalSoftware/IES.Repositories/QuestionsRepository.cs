@@ -15,20 +15,46 @@ namespace IES.Repositories
             ConnectionString = dbConfig.ConnectionString;
         }
 
-        public List<Question> SelectFive()
+        public List<Question> SelectFive(int startingChapterId, int endingChapterId)
         {
             using (IDbConnection db = new SqlConnection(ConnectionString))
             {
                 db.Open();
-                var questions = db.Query<Question>(
-                    @"SELECT TOP 5 
+                var questions = db.Query<Question>(@"
+                    SELECT TOP 5 
                         [QuestionId],
-                        [Description]
-	                FROM Questions 
-                    ORDER BY NEWID()").ToList();
+                        [Description],
+                        [CorrectAnswerId],
+                        [Points]
+	                FROM Questions WHERE [ChapterId] >= @startingChapterId AND [ChapterId] <= @endingChapterId
+                    ORDER BY NEWID()", new { startingChapterId, endingChapterId }).ToList();
+
+                questions.ForEach(q => q.PossibleAnswers = db.Query<Answer>(@"
+                        SELECT TOP 4
+                            [Answers].[AnswerId],
+	                        [Answers].[Description]
+                        FROM QARelations INNER JOIN Answers ON [QARelations].AnswerId = [Answers].AnswerId 
+                        WHERE QuestionId = @QuestionId
+                        ORDER BY NEWID()", new { QuestionId = q.QuestionId }).ToList());
                 db.Close();
 
                 return questions;
+            }
+        }
+
+        public void InsertWrongAnswerdQuestions(int studentId, List<int> questionIds, DateTime date)
+        {
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+            {
+                db.Open();
+                foreach (var question in questionIds)
+                {
+                    db.Query(@"
+                    INSERT INTO WrongQuestions
+                    VALUES(@studentId, @questionId, @date)", new { studentId, questionId = question, date }).ToList();
+                }
+                db.Close();
+
             }
         }
     }

@@ -7,7 +7,7 @@ export class Test {
 
     constructor() {
         this.testId = 0;
-        this.chapter =""
+        this.chapter = ""
         this.questions = [];
     }
 }

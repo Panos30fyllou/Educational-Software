@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using IES.Interfaces;
 using IES.Interfaces.Repositories;
-using IES.Models.BusinessModels;
 using IES.Models.DataModels;
 using IES.Repositorys;
 using System.Data;

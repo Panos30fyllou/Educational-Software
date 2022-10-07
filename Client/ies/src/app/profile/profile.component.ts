@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { combineLatest } from 'rxjs';
 import { Profile } from '../models/profile';
 
 import { Student, User } from '../models/user';
@@ -13,22 +14,33 @@ import { ProfileService } from '../services/profile.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  profile = new Profile
-
-  user = new Student()
-  constructor(private authSrv: AuthService, private snackBar: MatSnackBar, private profileService: ProfileService) {
+  lessonsProgress: number = 0;
+  avgTestScore = 0
+  profile = new Profile();
+  constructor(
+    private authSrv: AuthService,
+    private snackBar: MatSnackBar,
+    private profileService: ProfileService) {
   }
 
   ngOnInit(): void {
     this.authSrv.getCurrentUserProfile().subscribe({
       next: (profile) => {
         this.profile = profile;
+
+        debugger
+        combineLatest([
+          this.profileService.getAverageTestScoreById(profile.roleId),
+          this.profileService.getProgressById(profile.roleId)])
+          .subscribe(([score, progress]) => {
+            this.avgTestScore = score;
+            this.lessonsProgress = progress
+          });
       }
     });
   }
 
   onSubmit(data: any): void {
-    debugger
     this.profileService.updateProfile(data).subscribe({
       next: () => {
         this.snackBar.open("Profile updated successfully", "OK", { duration: 5000 });
