@@ -67,7 +67,6 @@ export class TestComponent implements OnInit {
       else
         res.wrongQuestionIds.push(this.userAnswerIds[i])
     }
-    debugger
     this.testsService.submitResult(res).subscribe({
       next: () => {
         if (res.wrongQuestionIds.length < 1)

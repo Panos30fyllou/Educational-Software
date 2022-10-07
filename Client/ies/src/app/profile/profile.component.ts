@@ -15,7 +15,8 @@ import { ProfileService } from '../services/profile.service';
 })
 export class ProfileComponent implements OnInit {
   lessonsProgress: number = 0;
-  avgTestScore = 0
+  avgTestScore = 0;
+  highScore=0;
   profile = new Profile();
   constructor(
     private authSrv: AuthService,
@@ -28,12 +29,13 @@ export class ProfileComponent implements OnInit {
       next: (profile) => {
         this.profile = profile;
 
-        debugger
         combineLatest([
           this.profileService.getAverageTestScoreById(profile.roleId),
+          this.profileService.getHighScoreById(profile.roleId),
           this.profileService.getProgressById(profile.roleId)])
-          .subscribe(([score, progress]) => {
+          .subscribe(([score, highScore, progress]) => {
             this.avgTestScore = score;
+            this.highScore = highScore;
             this.lessonsProgress = progress
           });
       }

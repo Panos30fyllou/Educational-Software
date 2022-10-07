@@ -67,5 +67,22 @@ namespace IES.WebHost.Controllers
 
             return Ok(averageScore);
         }
+
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult GetHighScore(int id)
+        {
+            decimal averageScore;
+            try
+            {
+                averageScore = _studentService.GetHighScore(id);
+            }
+            catch (BusinessException e)
+            {
+                return BadRequest(e.Message);
+            }
+
+            return Ok(averageScore);
+        }
     }
 }

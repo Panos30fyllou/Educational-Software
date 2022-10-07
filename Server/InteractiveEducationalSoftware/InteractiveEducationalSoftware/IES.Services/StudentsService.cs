@@ -31,5 +31,9 @@ namespace IES.Services
             return _studentRepository.GetAverageScore(studentId);
         }
 
+        public decimal GetHighScore(int studentId)
+        {
+            return _studentRepository.GetHighScore(studentId);
+        }
     }
 }

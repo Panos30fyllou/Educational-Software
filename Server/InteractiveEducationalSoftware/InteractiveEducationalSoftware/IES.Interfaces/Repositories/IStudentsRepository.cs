@@ -10,5 +10,6 @@ namespace IES.Interfaces.Repositories
         void UpdateProgress(StudentLessonProgress progress);
         decimal GetProgress(int studentId);
         decimal GetAverageScore(int studentId);
+        public decimal GetHighScore(int studentId);
     }
 }

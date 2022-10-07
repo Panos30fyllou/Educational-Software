@@ -64,6 +64,19 @@ namespace IES.Repositories
             }
         }
 
+        public decimal GetHighScore(int studentId)
+        {
+            decimal highscore = 0;
+            using (IDbConnection db = new SqlConnection(ConnectionString))
+            {
+                db.Open();
+                highscore = db.Query<decimal>(@"SELECT MAX([Score])FROM [IES].[dbo].[StudentTestsProgress] WHERE StudentId = @studentId",
+                new { studentId }).FirstOrDefault();
+                db.Close();
+            }
+            return highscore;
+        }
+
         public decimal GetAverageScore(int studentId)
         {
             decimal averageScore = 0;

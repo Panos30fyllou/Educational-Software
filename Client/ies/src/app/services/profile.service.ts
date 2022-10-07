@@ -29,4 +29,9 @@ export class ProfileService {
     this.url = environment.serverUrl + `/Students/GetAverageTestScore`;
     return this.http.get<number>(this.url, { params: new HttpParams().set("id", id) });
   }
+
+  getHighScoreById(id: number): Observable<number> {
+    this.url = environment.serverUrl + `/Students/GetHighScore`;
+    return this.http.get<number>(this.url, { params: new HttpParams().set("id", id) });
+  }
 }
